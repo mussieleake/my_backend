@@ -14,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::any('/login', function (){
-    return response(content:"<h1>hi</h1>", status: 200);
+Route::get('/contact', function(){
+    return view('contact');
 });
-
-Route::any('/login/{userId}', function($userId){
-    return $userId;
-})->where('userId', '[0-9]+');
-Route::GET('/about', function(){
+Route::get('/about', function(){
     return view('about');
 });
